@@ -1,0 +1,67 @@
+body {
+  background-image: url(background.jpg);
+}
+
+.howTo {
+  color: white;
+  border-radius: 10px;
+  margin: 1% 15%;
+  margin-top: 3%;
+  background-color: black;
+}
+
+.howTo p {
+  padding: 10px;
+}
+
+.search-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+.form-group {
+  margin: 20px;
+}
+
+#search {
+  margin-right: 5px;
+}
+
+.custom-select {
+  margin-left: 15px;
+}
+
+.box {
+  padding-top: 20px;
+
+}
+
+.card-block {
+  margin: 10px;
+  padding: 10px;
+  background-color: #007f5b;
+  border-radius: 10px;
+}
+
+img.card-img-top {
+  max-width: auto !important;
+  height: 250px !important;
+}
+
+.button {
+    background-color: #007f5b;
+    border-color: #54ffcd;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+
+  .ranbtn {
+    background-color: black;
+    color: white;
+  }
