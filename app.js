@@ -19,6 +19,12 @@ $(document).ready(function() {
       for (var i = 0; i < episodes.length; i++) {
         var synopsis = episodes[i].attributes.synopsis;
         var titles = episodes[i].attributes.titles.en;
+        if (titles == undefined) {
+          titles = episodes[i].attributes.titles.en_jp
+        }
+        else if (titles == '') {
+          titles = episodes[i].attributes.titles.en_jp
+        }
         var slug = episodes[i].attributes.slug;
         var posterImage = episodes[i].attributes.posterImage.original;
         var ageRating = episodes[i].attributes.ageRating
@@ -57,11 +63,17 @@ $(document).ready(function() {
 
         var synopsis = episodes.attributes.synopsis;
         var titles = episodes.attributes.titles.en;
+        if (titles == undefined) {
+          titles = episodes.attributes.titles.en_jp
+        }
+        else if (titles == '') {
+          titles = episodes.attributes.titles.en_jp
+        }
         var slug = episodes.attributes.slug;
         var posterImage = episodes.attributes.posterImage.original;
         var ageRating = episodes.attributes.ageRating
         var series = episodes.attributes.episodeCount
-        
+
         $('.details').append(
           '<div class="col-9"' +
             '<div class="card">' +
