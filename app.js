@@ -14,15 +14,11 @@ $(document).ready(function() {
     $.get(basicSearch)
     .then(function(data) {
       var episodes = data.data;
-      console.log(data.data);
 
 
       for (var i = 0; i < episodes.length; i++) {
         var synopsis = episodes[i].attributes.synopsis;
         var titles = episodes[i].attributes.titles.en;
-        // if (titles == undefined) {
-        //   titles = episodes[i].attributes.titles.en_jp
-        // }
         if (!titles && !episodes[i].attributes.titles.en_jp) {
           titles = episodes[i].attributes.titles.en_us
         }

@@ -1,7 +1,7 @@
 body {
   background-image: url(background.jpg);
   display: flex;
-  height: 99vh;
+  height: 100vh;
   flex-direction: column;
   justify-content: space-between;
 
@@ -38,7 +38,7 @@ body {
 }
 
 .custom-select {
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .info {
