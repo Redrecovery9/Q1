@@ -53,7 +53,6 @@ $(document).ready(function() {
     $.get(idSearch)
     .then(function(data) {
       var episodes = data.data;
-      console.log(data.data)
 
 
         var synopsis = episodes.attributes.synopsis;
@@ -62,7 +61,7 @@ $(document).ready(function() {
         var posterImage = episodes.attributes.posterImage.original;
         var ageRating = episodes.attributes.ageRating
         var series = episodes.attributes.episodeCount
-        console.log($('.details'))
+        
         $('.details').append(
           '<div class="col-9"' +
             '<div class="card">' +
