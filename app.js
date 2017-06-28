@@ -14,15 +14,19 @@ $(document).ready(function() {
     $.get(basicSearch)
     .then(function(data) {
       var episodes = data.data;
+      console.log(data.data);
 
 
       for (var i = 0; i < episodes.length; i++) {
         var synopsis = episodes[i].attributes.synopsis;
         var titles = episodes[i].attributes.titles.en;
-        if (titles == undefined) {
-          titles = episodes[i].attributes.titles.en_jp
+        // if (titles == undefined) {
+        //   titles = episodes[i].attributes.titles.en_jp
+        // }
+        if (!titles && !episodes[i].attributes.titles.en_jp) {
+          titles = episodes[i].attributes.titles.en_us
         }
-        else if (titles == '') {
+        else if (!titles) {
           titles = episodes[i].attributes.titles.en_jp
         }
         var slug = episodes[i].attributes.slug;
@@ -65,6 +69,7 @@ $(document).ready(function() {
         var titles = episodes.attributes.titles.en;
         if (titles == undefined) {
           titles = episodes.attributes.titles.en_jp
+
         }
         else if (titles == '') {
           titles = episodes.attributes.titles.en_jp
