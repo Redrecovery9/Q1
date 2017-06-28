@@ -29,7 +29,7 @@ body {
 }
 
 .custom-select {
-  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .box {
@@ -64,4 +64,14 @@ img.card-img-top {
   .ranbtn {
     background-color: black;
     color: white;
+  }
+
+  .footer {
+    /*position: fixed;*/
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #007f5b;
+    margin-top: 29%;
   }

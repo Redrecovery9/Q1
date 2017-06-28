@@ -6,9 +6,7 @@ $(document).ready(function() {
     event.preventDefault()
     $('.details').empty()
     var type = $('.custom-select').val()
-    console.log(type)
     var title = $('#search').val()
-    console.log(title)
 
 
     var basicSearch = 'https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[' + type + ']=' + title
@@ -16,7 +14,7 @@ $(document).ready(function() {
     $.get(basicSearch)
     .then(function(data) {
       var episodes = data.data;
-      console.log(data.data)
+
 
       for (var i = 0; i < episodes.length; i++) {
         var synopsis = episodes[i].attributes.synopsis;
@@ -45,4 +43,43 @@ $(document).ready(function() {
       }
     })
   })
+
+  $('.ranbtn').click(function(event) {
+    event.preventDefault()
+      $('.details').empty()
+      var id = Math.ceil(Math.random()*13500)
+
+    var idSearch = `https://kitsu.io/api/edge/anime/${id}`
+    $.get(idSearch)
+    .then(function(data) {
+      var episodes = data.data;
+      console.log(data.data)
+
+
+        var synopsis = episodes.attributes.synopsis;
+        var titles = episodes.attributes.titles.en;
+        var slug = episodes.attributes.slug;
+        var posterImage = episodes.attributes.posterImage.original;
+        var ageRating = episodes.attributes.ageRating
+        var series = episodes.attributes.episodeCount
+        console.log($('.details'))
+        $('.details').append(
+          '<div class="col-9"' +
+            '<div class="card">' +
+              '<img class="card-img-top img-top" src="' + posterImage + '" alt="Card image cap">' +
+              '<div class="card-block">' +
+              '<button class="button" type="button" data-toggle="collapse" data-target="#collapseExample' + slug + ' "aria-expanded="false" aria-controls="collapseExample">' + titles + '</button>' +
+              '<div class="collapse" id="collapseExample' + slug + '">' +
+                '<div class="card card-block">' +
+                  '<p class="card-text">'+ synopsis + '</p>' +
+                '</div>' +
+              '</div>' +
+              '<p class="card-text"> Rating: '+ ageRating + '</p>' +
+              '<p class="card-text"> Episodes: ' + series + '</p>' +
+            '</div>' +
+          '</div>'
+        )
+
+    })
   })
+})
