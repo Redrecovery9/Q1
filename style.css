@@ -12,41 +12,49 @@ body {
 }
 
 .howTo {
+  display: flex;
+  justify-content: center;
   color: white;
-  border-radius: 10px;
   margin: 1% 15%;
   margin-top: 3%;
-  background-color: black;
+  text-shadow: .1em .1em .1em black, -.1em -.1em .1em black;
 }
 
 .howTo p {
-  padding: 10px;
+  font-weight: bolder;
 }
 
 .search-buttons {
   display: flex;
   justify-content: space-around;
-  padding-top: 50px;
+  padding-top: 3em;
 }
 
 .form-group {
-  margin: 20px;
+  margin: 1vh;
+  opacity: .85;
 }
 
 #search {
-  margin-right: 5px;
+  margin-right: .3em;
+  width: 20em;
 }
 
 .custom-select {
-  margin-right: 5px;
+  margin-right: .3em;
 }
+
+.hide {
+  display: none;
+}
+
 
 .info {
   height: 100%;
 }
 
 .box {
-  padding-top: 20px;
+  padding-top: 2em;
 
 }
 
@@ -59,7 +67,7 @@ body {
 
 img.card-img-top {
   max-width: auto !important;
-  height: 250px !important;
+  height: 20em !important;
 }
 
 .button {
@@ -85,5 +93,4 @@ img.card-img-top {
     height: 60px;
     line-height: 60px;
     background-color: #007f5b;
-    /*margin-top: 29%;*/
   }
