@@ -25,7 +25,6 @@ $(document).ready(function() {
     $('.details').empty()
     var type = $('.custom-select').val()
     var title = $('#search').val()
-    var arr = []
     hideErrorLoading()
     if (!type || !title) {
       displayErrorLoading()
