@@ -11,6 +11,11 @@ body {
   display: block;
 }
 
+.ranime {
+  width: auto;
+  height: auto;
+}
+
 .howTo {
   display: flex;
   justify-content: center;
@@ -37,7 +42,7 @@ body {
   opacity: .85;
 }
 
-#search {
+.search {
   margin-right: .3em;
   width: 20em;
 }
