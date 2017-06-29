@@ -14,14 +14,16 @@ body {
 .howTo {
   display: flex;
   justify-content: center;
+  background-color: rgba(0,0,0,0.5);
   color: white;
-  margin: 1% 15%;
+  margin: 2% 25%;
   margin-top: 3%;
   text-shadow: .1em .1em .1em black, -.1em -.1em .1em black;
 }
 
 .howTo p {
   font-weight: bolder;
+
 }
 
 .search-buttons {
@@ -83,8 +85,9 @@ img.card-img-top {
   }
 
   .ranbtn {
-    background-color: black;
-    color: white;
+    background-color: #007f5b;
+    color: #83FFD9;
+    border: 0px;
   }
 
   .footer {
@@ -93,4 +96,5 @@ img.card-img-top {
     height: 60px;
     line-height: 60px;
     background-color: #007f5b;
+    color: #83FFD9;
   }
