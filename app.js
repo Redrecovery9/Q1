@@ -1,9 +1,17 @@
 var test ='https://kitsu.io/api/edge/anime?filter[text]=attack on titan'
 var loading = $('.loading')
 
+function displayLoading() {
+  loading.removeClass('hide')
+}
+
+function hideLoading() {
+  loading.addClass('hide')
+}
+
 $(document).ready(function() {
 
-  $('.searchButton').click(function(event) {
+  $('.searchButton').click(function (event) {
     event.preventDefault()
     $('.details').empty()
     displayLoading()
@@ -13,6 +21,7 @@ $(document).ready(function() {
     $.get(basicSearch)
     .then(function(data) {
       var episodes = data.data;
+      console.log(data.data)
 
       for (var i = 0; i < episodes.length; i++) {
         var synopsis = episodes[i].attributes.synopsis;
@@ -30,7 +39,7 @@ $(document).ready(function() {
 
         hideLoading()
         $('.details').append(
-          '<div class="col-6"' +
+          '<div class="col-lg-6 col-md-7 col-sm-8"' +
             '<div class="card">' +
               '<img class="card-img-top" src="' + posterImage + '" alt="Card image cap">' +
               '<div class="card-block">' +
@@ -47,14 +56,11 @@ $(document).ready(function() {
         )
       }
     })
-    function displayLoading() {
-      loading.removeClass('hide')
-    }
+    .catch(function (error) {
+      var posterImage = episodes[i].attributes.posterImage.large;
+    })
+    })
 
-    function hideLoading() {
-      loading.addClass('hide')
-    }
-  })
 
   $('.ranbtn').click(idSearchFunction)
 })
@@ -108,12 +114,6 @@ function idSearchFunction(event) {
   .catch(function (error) {
     idSearchFunction()
   })
-  function displayLoading() {
-    loading.removeClass('hide')
-  }
 
-  function hideLoading() {
-    loading.addClass('hide')
-  }
 
 }
