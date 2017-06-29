@@ -1,12 +1,21 @@
 var test ='https://kitsu.io/api/edge/anime?filter[text]=attack on titan'
 var loading = $('.loading')
+var errorLoading = $('.errorLoading')
 
 function displayLoading() {
   loading.removeClass('hide')
 }
 
+function displayErrorLoading() {
+  errorLoading.removeClass('hide')
+}
+
 function hideLoading() {
   loading.addClass('hide')
+}
+
+function hideErrorLoading() {
+  errorLoading.addClass('hide')
 }
 
 $(document).ready(function() {
@@ -14,9 +23,16 @@ $(document).ready(function() {
   $('.searchButton').click(function (event) {
     event.preventDefault()
     $('.details').empty()
-    displayLoading()
     var type = $('.custom-select').val()
     var title = $('#search').val()
+    hideErrorLoading()
+    if (!type || !title) {
+      displayErrorLoading()
+    }
+    else {
+      displayLoading()
+    }
+
     var basicSearch = 'https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[' + type + ']=' + title
     $.get(basicSearch)
     .then(function(data) {
@@ -38,6 +54,7 @@ $(document).ready(function() {
         var series = episodes[i].attributes.episodeCount
 
         hideLoading()
+        hideErrorLoading()
         $('.details').append(
           '<div class="col-lg-6 col-md-7 col-sm-8"' +
             '<div class="card">' +
