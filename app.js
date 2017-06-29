@@ -25,6 +25,7 @@ $(document).ready(function() {
     $('.details').empty()
     var type = $('.custom-select').val()
     var title = $('#search').val()
+    var arr = []
     hideErrorLoading()
     if (!type || !title) {
       displayErrorLoading()
@@ -37,6 +38,10 @@ $(document).ready(function() {
     $.get(basicSearch)
     .then(function(data) {
       var episodes = data.data;
+      if (data.data.length ===0) {
+        displayErrorLoading()
+        hideLoading()
+      }
       console.log(data.data)
 
       for (var i = 0; i < episodes.length; i++) {
