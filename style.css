@@ -19,6 +19,7 @@ body {
 .howTo {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   background-color: rgba(0,0,0,0.5);
   color: white;
   margin: 2% 15%;
@@ -32,6 +33,13 @@ body {
   font-weight: bolder;
   text-align: center;
 
+}
+
+.list {
+display: flex;
+justify-content: center;
+color: white;
+text-shadow: .1em .1em .1em black, -.1em -.1em .1em black;
 }
 
 .search-buttons {
