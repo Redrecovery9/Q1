@@ -21,13 +21,16 @@ body {
   justify-content: center;
   background-color: rgba(0,0,0,0.5);
   color: white;
-  margin: 2% 25%;
+  margin: 2% 15%;
   margin-top: 3%;
   text-shadow: .1em .1em .1em black, -.1em -.1em .1em black;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
-.howTo p {
+.howTo h2 {
   font-weight: bolder;
+  text-align: center;
 
 }
 
@@ -45,6 +48,7 @@ body {
 .search {
   margin-right: .3em;
   width: 20em;
+  height: 2.5em;
 }
 
 .custom-select {
