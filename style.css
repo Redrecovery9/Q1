@@ -45,6 +45,11 @@ body {
   opacity: .85;
 }
 
+.searchButton {
+  color: #B50729;
+  font-weight: bolder;
+}
+
 .search {
   margin-right: .3em;
   width: 20em;
@@ -81,10 +86,15 @@ img.card-img-top {
   height: 20em !important;
 }
 
+.card-text {
+  color: #83FFD9;
+}
+
 .button {
-    background-color: #007f5b;
-    border-color: #54ffcd;
-    color: black;
+    background-color: #B50729;
+    border-radius: 10px;
+    border: 0px;
+    color: #7AF6D1;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -94,7 +104,7 @@ img.card-img-top {
   }
 
   .ranbtn {
-    background-color: #007f5b;
+    background-color: #B50729;
     color: #83FFD9;
     border: 0px;
   }
